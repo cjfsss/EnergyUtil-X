@@ -174,7 +174,6 @@ public class TitleDialogFragment extends DialogFragment implements TitleDialogIn
                 if (isShowing()) {
                     return;
                 }
-                show(getParentFragmentManager(), "title");
                 mIsShowing = true;
             }
         });
@@ -209,6 +208,7 @@ public class TitleDialogFragment extends DialogFragment implements TitleDialogIn
     }
 
     @Override
+    @Deprecated
     public void setProgress(int value) {
         throw new RuntimeException("not call setProgress");
     }
