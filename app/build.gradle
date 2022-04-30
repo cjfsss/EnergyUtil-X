@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
-
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
     defaultConfig {
         applicationId "hos.demo"
         minSdkVersion 16
-        targetSdkVersion 21
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -40,5 +40,4 @@ dependencies {
     implementation 'com.github.cjfsss:EnergyUtils:0.1.9'
     implementation 'com.github.cjfsss:EnergyThread:0.1.6'
     api 'com.google.code.gson:gson:2.8.7'
-//    implementation 'energy:util:0.0.1'
 }

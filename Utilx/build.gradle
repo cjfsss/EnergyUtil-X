@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
-
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 31
+        minSdkVersion 8
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -35,5 +35,4 @@ dependencies {
     compileOnly 'com.github.cjfsss:EnergyCore:0.0.5'
     compileOnly 'com.github.cjfsss:EnergyUtils:0.1.9'
     compileOnly 'com.github.cjfsss:EnergyThread:0.1.6'
-//    compileOnly 'energy:util:0.0.1'
 }
