@@ -72,6 +72,9 @@ public class ChoiceDialog extends ChoiceDialogImpl<ChoiceDialog> implements Choi
             if (itemId != 0) {
                 items = ResUtils.getStringArray(itemId);
             }
+            if (title != null) {
+                builder.setTitle(title);
+            }
             if (showType == 1) {
                 // showSingle
                 if (items != null) {
@@ -148,6 +151,30 @@ public class ChoiceDialog extends ChoiceDialogImpl<ChoiceDialog> implements Choi
                             }
                         });
                     }
+                }
+            }
+            if (confirm != null) {
+                if (confirmFunction == null) {
+                    builder.setPositiveButton(confirm, null);
+                } else {
+                    builder.setPositiveButton(confirm, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            confirmFunction.onTarget(ChoiceDialog.this);
+                        }
+                    });
+                }
+            }
+            if (cancel != null) {
+                if (cancelFunction == null) {
+                    builder.setNegativeButton(cancel, null);
+                } else {
+                    builder.setNegativeButton(cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            cancelFunction.onTarget(ChoiceDialog.this);
+                        }
+                    });
                 }
             }
             dialogReal = builder.create();

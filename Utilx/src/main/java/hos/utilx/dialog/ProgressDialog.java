@@ -78,6 +78,7 @@ public class ProgressDialog extends DialogImpl<ProgressDialog> {
                 android.app.ProgressDialog progressDialog = getProgressDialog();
                 if (progressDialog != null) {
                     progressDialog.setCancelable(cancelable);
+                    progressDialog.setCanceledOnTouchOutside(cancelable);
                     progressDialog.setTitle(title);
                     progressDialog.setMessage(content);
                     if (applyBottom) {

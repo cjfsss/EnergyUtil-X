@@ -90,9 +90,9 @@ public class TitleDialog extends TitleDialogImpl<TitleDialog> implements TitleDi
             }
             if (confirm != null) {
                 if (confirmFunction == null) {
-                    builder.setNegativeButton(confirm, null);
+                    builder.setPositiveButton(confirm, null);
                 } else {
-                    builder.setNegativeButton(confirm, new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton(confirm, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             confirmFunction.onTarget(TitleDialog.this);
@@ -102,9 +102,9 @@ public class TitleDialog extends TitleDialogImpl<TitleDialog> implements TitleDi
             }
             if (cancel != null) {
                 if (cancelFunction == null) {
-                    builder.setPositiveButton(cancel, null);
+                    builder.setNegativeButton(cancel, null);
                 } else {
-                    builder.setPositiveButton(cancel, new DialogInterface.OnClickListener() {
+                    builder.setNegativeButton(cancel, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             cancelFunction.onTarget(TitleDialog.this);
